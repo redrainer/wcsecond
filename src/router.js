@@ -1,14 +1,16 @@
 import React from 'react'
-import { BrowserRouter as Router,Route } from "react-router-dom"
-import App from './pages/app'
-import Login from './pages/login'
-import Home from './pages/home'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import App from './Pages/app'
+import Login from './Pages/login'
+import Home from './Pages/home'
 
 
-export default function IRouter(){
+export default function IRouter() {
     return <Router>
-        <Route path="/" component={App}></Route>
-        <Route path="/login" component={Login}></Route>
-        <Route path="/home" component={Home}></Route>
+        <Switch>
+            <Route exact path="/" component={App}></Route>
+            <Route path="/login" component={Login}></Route>
+            <Route path="/home" component={Home}></Route>
+        </Switch>
     </Router>
 }
